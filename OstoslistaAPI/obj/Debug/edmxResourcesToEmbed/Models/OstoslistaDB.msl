@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TuoteModelStoreContainer" CdmEntityContainer="TuoteEntities">
+    <EntitySetMapping Name="Ostoslista">
+      <EntityTypeMapping TypeName="TuoteModel.Ostoslista">
+        <MappingFragment StoreEntitySet="Ostoslista">
+          <ScalarProperty Name="ostoid" ColumnName="ostoid" />
+          <ScalarProperty Name="tuotteennimi" ColumnName="tuotteennimi" />
+          <ScalarProperty Name="määrä" ColumnName="määrä" />
+          <ScalarProperty Name="korissa" ColumnName="korissa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
