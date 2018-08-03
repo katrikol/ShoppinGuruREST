@@ -37,8 +37,10 @@ namespace OstoslistaAPI.Controllers
 
         // PUT: api/Ostoslista/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutOstoslista(int id, Ostoslista ostoslista)
+        public IHttpActionResult PutOstoslista(int id)
         {
+            Ostoslista ostoslista = db.Ostoslista.Find(id);
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -49,6 +51,7 @@ namespace OstoslistaAPI.Controllers
                 return BadRequest();
             }
 
+            ostoslista.korissa = true;
             db.Entry(ostoslista).State = EntityState.Modified;
 
             try
@@ -66,8 +69,13 @@ namespace OstoslistaAPI.Controllers
                     throw;
                 }
             }
+            if(ostoslista==null)
+                {
+                return NotFound();
+            }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            db.SaveChanges();
+            return Ok(ostoslista);
         }
 
         // POST: api/Ostoslista
