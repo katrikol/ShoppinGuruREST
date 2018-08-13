@@ -26,13 +26,13 @@ namespace OstoslistaAPI.Controllers
         [ResponseType(typeof(Ostoslista))]
         public IHttpActionResult GetOstoslista(int id)
         {
-            Ostoslista ostoslista = db.Ostoslista.Find(id);
-            if (ostoslista == null)
+            Ostoslista shoppinglist = db.Ostoslista.Find(id);
+            if (shoppinglist == null)
             {
                 return NotFound();
             }
 
-            return Ok(ostoslista);
+            return Ok(shoppinglist);
         }
 
         // PUT: api/Ostoslista/5
